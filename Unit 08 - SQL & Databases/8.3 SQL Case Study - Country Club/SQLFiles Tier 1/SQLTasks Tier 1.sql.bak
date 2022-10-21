@@ -225,32 +225,13 @@ ORDER BY total_usage_hours DESC
 
 
 /* Q13: Find the facilities usage by month, but not guests */
-
-
-
-/*
-Bookings
-	bookid
-	facid
-	memid
-	starttime
-	slots
-
-Facilities
-	facid
-	name
-	membercost
-	guestcost
-	initialoutlay
-	monthlymaintenance
-
-Members
-	memid
-	surname
-	firstname
-	address
-	zipcode
-	telephone
-	recommendedby
-	joindate
-	*/
+SELECT Facilities.name AS facility, reservation_month, reservation_slots, reservation_slots * 0.5 as usage_hours
+FROM
+(SELECT facid,
+	strftime("%m-%Y", starttime) as reservation_month,
+	SUM(slots) AS reservation_slots
+FROM Bookings
+WHERE memid != 0
+	GROUP BY facid, strftime("%m-%Y", starttime)) as group_by_month
+JOIN Facilities
+ON Facilities.facid = group_by_month.facid
