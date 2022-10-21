@@ -198,7 +198,7 @@ ORDER BY total_revenue
 
 
 /* Q11: Produce a report of members and who recommended them in alphabetic surname,firstname order */
-SELECT a.surname, a.firstname, (b.firstname|| ' ' ||b.surname) AS recommender
+SELECT a.surname, a.firstname, (b.surname ||', '|| b.firstname) AS recommender
 FROM `Members` AS a
 INNER JOIN `Members` AS b
 ON a.recommendedby = b.memid

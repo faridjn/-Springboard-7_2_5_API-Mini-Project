@@ -174,6 +174,7 @@ You should see the output from the initial query 'SELECT * FROM FACILITIES'.
 Complete the remaining tasks in the Jupyter interface. If you struggle, feel free to go back
 to the PHPMyAdmin interface as and when you need to. 
 
+
 You'll need to paste your query into value of the 'query1' variable and run the code block again to get an output.
  
 QUESTIONS:
@@ -195,6 +196,7 @@ ORDER BY total_revenue
 ;
 
 
+
 /* Q11: Produce a report of members and who recommended them in alphabetic surname,firstname order */
 SELECT a.surname, a.firstname, (b.firstname|| ' ' ||b.surname) AS recommender
 FROM `Members` AS a
@@ -207,6 +209,7 @@ SELECT c.surname, c.firstname, Null
 FROM `Members` AS c
 WHERE c.recommendedby = ""
 ORDER BY a.surname, a.firstname
+
 
 
 /* Q12: Find the facilities with their usage by member, but not guests */
@@ -222,6 +225,7 @@ FROM
 JOIN Facilities
 ON Facilities.facid = grouped_facility.facid
 ORDER BY total_usage_hours DESC
+
 
 
 /* Q13: Find the facilities usage by month, but not guests */
