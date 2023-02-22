@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/gitProjects/Springboard/Unit%2027%20-%20Interview%20Challanges/1.%20ultimate_challenge/notebooks/mlruns/152763626802758072/3758bfa627254a6fb4aa2e7abd89b32f/artifacts
+end_time: 1677034935117
+entry_point_name: ''
+experiment_id: '152763626802758072'
+lifecycle_stage: active
+run_id: 3758bfa627254a6fb4aa2e7abd89b32f
+run_name: Session Initialized db2b
+run_uuid: 3758bfa627254a6fb4aa2e7abd89b32f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677034935028
+status: 4
+tags: []
+user_id: Farid
